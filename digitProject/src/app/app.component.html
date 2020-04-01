@@ -1,0 +1,31 @@
+<form [formGroup]="digitForm" (ngSubmit)="onSubmit()">
+<div class="row searchRow">
+    <div class="col-md-4">
+        <div class="form-group">
+            <input [(ngModel)]="digitInput" formControlName="digitText" type="text" class="form-control" id="digitText"  placeholder="Enter Number">
+            <div *ngIf="submitted && f.digitText.errors">
+            <small *ngIf="f.digitText.errors.required" class="errorText">Please Enter Number</small>
+            <small *ngIf="f.digitText.errors.minlength" class="errorText">Minimum digit should Be 7</small>
+            <small *ngIf="f.digitText.errors.maxlength" class="errorText">Maximum digit should be 10</small>
+        </div>
+          </div>
+    </div>
+    <div class="col-md-2">
+        <button type="submit" class="btn btn-primary mr-1">Search</button>
+    </div>
+</div>
+</form>
+
+<div class="jumbotron">
+ 
+    <div class="text-center">
+    <a href="https://jsonworld.com"><h2>JSON WORLD</h2></a>
+    <a href="" target="_blank"><span>Server Side Pagination in Angular using ngx-pagination</span></a>
+    </div>
+    <div class="list">
+    <ul>
+    <li *ngFor="let item of pageOfItems | paginate: config">{{ item }}</li>
+    </ul>
+    <pagination-controls (pageChange)="pageChange($event)" class="my-pagination"></pagination-controls>
+    </div>
+    </div>

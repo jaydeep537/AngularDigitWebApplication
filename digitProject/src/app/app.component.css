@@ -1,0 +1,12 @@
+.errorText{
+    padding: 5px;
+    display: inline-block;
+    background: red;
+    color: white;
+    border-radius: 6px;
+    margin-top: 4px;
+    font-size: 12px;
+}
+.searchRow{
+    padding: 10px 15px 0px;
+}
