@@ -10,6 +10,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 })
 export class AppComponent {
   digitForm: FormGroup;
+  dataFetchSuccess = false;
   submitted = false;
   digitInput = "";
   pageOfItems = [];
@@ -53,5 +54,10 @@ onSubmit() {
       console.log("totalItems,",this.config.totalItems);
       this.pageOfItems = items.data.combinationList;
       this.config.totalItems = items.data.totalNumberOfRecord;
+      if(this.pageOfItems && this.pageOfItems.length>0){
+        this.dataFetchSuccess = true;
+      }else{
+        this.dataFetchSuccess = false;
+      }
     }
 }

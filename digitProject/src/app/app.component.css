@@ -10,3 +10,23 @@
 .searchRow{
     padding: 10px 15px 0px;
 }
+.digitSpan{
+    padding: 7px;
+    background: #c3acac;
+    color: white;
+    border-radius: 9px;
+    margin: 5px;
+}
+.digitPagination{
+    margin-top: 10px;
+    float: left;
+}
+.list{
+    float: left;
+    width: 100%;
+    padding: 20px;
+    border: 1px solid #dccfcf;
+}
+.searchRow .col-md-2{
+    padding: 0;
+}

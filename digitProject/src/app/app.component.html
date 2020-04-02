@@ -16,16 +16,13 @@
 </div>
 </form>
 
-<div class="jumbotron">
- 
-    <div class="text-center">
-    <a href="https://jsonworld.com"><h2>JSON WORLD</h2></a>
-    <a href="" target="_blank"><span>Server Side Pagination in Angular using ngx-pagination</span></a>
+    <div class="list" *ngIf="dataFetchSuccess">
+    <div>
+        <span class="digitSpan" *ngFor="let item of pageOfItems | paginate: config">{{ item }}</span>
     </div>
-    <div class="list">
-    <ul>
-    <li *ngFor="let item of pageOfItems | paginate: config">{{ item }}</li>
-    </ul>
-    <pagination-controls (pageChange)="pageChange($event)" class="my-pagination"></pagination-controls>
+    <div>
+        <pagination-controls (pageChange)="pageChange($event)" class="my-pagination digitPagination"></pagination-controls>
     </div>
+    
     </div>
+    
