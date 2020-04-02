@@ -49,7 +49,7 @@ onSubmit() {
   pageChange(newPage: number) {
     console.log("Page change called",newPage);
           this.config.currentPage = newPage; 
-          this.http.get<any>(`https://hobs-lite-eiot-uat.westindia.cloudapp.azure.com/FindPossibleAlphabet/FindPossibleAlphabet?number=${this.config.currentPage}&recordperpage=${this.config.itemsPerPage}`).subscribe(x => {
+          this.http.get<any>(`https://hobs-lite-eiot-uat.westindia.cloudapp.azure.com/FindPossibleAlphabet/FillterPossibleAlphabetbyPageNumber?page=${this.config.currentPage}&recordperpage=${this.config.itemsPerPage}`).subscribe(x => {
           console.log("Response",x);
           this.buildPager(x)
         });
