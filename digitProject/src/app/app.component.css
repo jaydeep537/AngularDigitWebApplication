@@ -16,6 +16,7 @@
     color: white;
     border-radius: 9px;
     margin: 5px;
+    display: inline-block;
 }
 .digitPagination{
     margin-top: 10px;
