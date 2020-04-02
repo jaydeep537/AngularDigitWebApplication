@@ -17,12 +17,20 @@
 </form>
 
     <div class="list" *ngIf="dataFetchSuccess">
+        <h3>Possible Combinations of {{searchedInput}}.</h3>
     <div>
         <span class="digitSpan" *ngFor="let item of pageOfItems | paginate: config">{{ item }}</span>
     </div>
     <div>
         <pagination-controls (pageChange)="pageChange($event)" class="my-pagination digitPagination"></pagination-controls>
+        <select (change)="perPageChange($event.target.value)" class="perPageClass">
+            <option *ngFor="let summary of paginationPerpageArray" value={{summary}}>
+              {{summary}}
+            </option>
+          </select>
+    </div>    
     </div>
-    
+    <div class="list" *ngIf="!dataFetchSuccess && submitted">
+        <h3>No Combination found of {{searchedInput}}.</h3>   
     </div>
     
